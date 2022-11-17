@@ -5,7 +5,7 @@
 
 \author{Brian Gough}
 \date{March, 2004}
-\bioinfo{Forword by Richard M. Stallman}{}
+\bioinfo{Forword}{Richard M. Stallman}
 
 \setcounter{tocdepth}{3}
 
@@ -22,19 +22,131 @@
 
 \addbibresource[location=local]{reference.bib} % 参考文献，不要删除
 
+
+%==========================目录层次设置============================%
+\setcounter{part}{-1}
+\setcounter{chapter}{0}%设置目录计数初值
+\setcounter{tocdepth}{3} %设置目录的显示级别。book类从-1开始，为第一级。
+\setcounter{secnumdepth}{3}
+%（1）设置自动编号的深度（即编号到哪一级别）。{num}在article中取0到5的整数相应于目录中显示到\chapter，\section，\subsection，\subsubsection，\paragraph 或\subparagraph 层次。在book和report中，num取-1到5之间的整数相应于在目录中显示到\part，\chapter，\section，\subseciton，\subsubsection， \paragraph 或\subparagraph 层次。          
+%（2）对长标题用\section[abc]{abcdefg}形式的命令。                                            
+%（3）另外，还可以利用\addtocounter{secnumdepth}{num}来使得当前章节编号深度增加或减小，num可取正值或负值。
+%（4）对于高级内容要求的章节以星号标识,然后在正文中用\begin{advanced}\section{...}\end{advanced}即可
+%------------------------------------------------------------------------------------------------------------------------%
+
 \begin{document}
 
 \maketitle
 \frontmatter
 
 \tableofcontents
-
 \mainmatter
+
+\chapter*{前言}
+\addcontentsline{toc}{chapter}{前言}
 
 \chapter{介绍}
 \section{GCC的简要历史}
 \section{GCC的主要特点}
 \section{在C和C++中编程}
 \section{本手册使用的惯例}
+
+\chapter{编译一个 C 程序}
+\section{编译一个简单的 C 程序}
+\section{在一个简单的程序中寻找错误}
+\section{编译多个源文件}
+\section{独立编译文件}
+\subsection{从源文件创建目标文件}
+\subsection{从目标文件创建可执行文件}
+\subsection{目标文件的链接顺序}
+\section{链接外部库}
+\subsection{库的链接顺序}
+\section{使用库的头文件}
+
+\chapter{编译选项}
+\section{设置搜索路径}
+\subsection{搜索路径的例子}
+\subsection{环境变量}
+\subsection{扩展搜索路径}
+\section{共享库和静态库}
+\section{C语言标准}
+\subsection{ANSI/ISO}
+\subsection{Strict ANSI/ISO}
+\subsection{选择指定标准}
+\section{警告选项 -Wall}
+\section{额外的警告选项}
+
+\chapter{使用预处理器}
+\section{宏定义}
+\section{带值的宏}
+\section{对源文件预处理}
+
+\chapter{为调试而编译}
+\section{检查核心文件}
+\section{显示反向追踪}
+
+\chapter{编译与优化}
+\section{源代码级别优化}
+\subsection{普通子表达式的消除}
+\subsection{函数内联inling}
+\section{时间-空间的权衡}
+\subsection{循环展开}
+\section{调度规划}
+\section{优化级别}
+\section{例子}
+\section{优化与调试}
+\section{优化与编译器警告}
+
+\chapter{编译 C++ 程序}
+\section{编译一个简单的 C++ 程序}
+\section{使用 C++ 标准库}
+\section{模版}
+\subsection{使用 C++ 标准库模版}
+\subsection{提供自己的模版}
+\subsection{明确的模板实例化}
+\subsection{export 关键字}
+
+\chapter{特定平台的选项}
+\section{Inter 和 AMD x86选项}
+\section{DEC Alpha 选项}
+\section{SPARC 选项}
+\section{POWER/PowerPC 选项}
+\section{多架构支持}
+
+\chapter{故障排除}
+\section{命令行选项的帮助}
+\section{版本号}
+\section{Verbose吵闹的编译}
+
+\chapter{编译器相关工具}
+\section{使用GNU archiver打包工具创建一个库}
+\section{使用 gprof profiler剖析器}
+\section{使用 gcov 进行覆盖测试}
+
+\chapter{编译器是如何工作的}
+\section{编译过程概述}
+\section{预处理器}
+\section{编译器}
+\section{汇编器}
+\section{链接器}
+
+\chapter{检查已编译的文件}
+\section{识别文件}
+\section{检查符号表}
+\section{查找动态链接库}
+
+\chapter{帮助}
+
+\chapter*{后续阅读}
+\addcontentsline{toc}{chapter}{后续阅读}
+\chapter*{鸣谢}
+\addcontentsline{toc}{chapter}{鸣谢}
+\chapter*{自由软件组织}
+\addcontentsline{toc}{chapter}{自由软件组织}
+\chapter*{GNU Free Documentation License}
+\addcontentsline{toc}{chapter}{GNU Free Documentation License}
+\chapter*{索引表}
+\addcontentsline{toc}{chapter}{索引表}
+
 
 \end{document}
