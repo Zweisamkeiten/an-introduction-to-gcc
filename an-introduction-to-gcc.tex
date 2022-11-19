@@ -129,6 +129,25 @@
 \section{编译器}
 \section{汇编器}
 \section{链接器}
+编译的最后一个阶段是链接所有目标文件为一个可执行文件. 在实际情况下, 一个可执行文件需要许多来自系统和C运行时\textbf{(crt)}库的外部函数. 最后, gcc内部实际使用的链接命令非常复杂. 例如, 链接一个 \textit{Hello World} 程序的整个命令如下:
+\begin{lstlisting}
+  $ ld -dynamic-linker /lib/ld-linux.so.2 /usr/lib/crt1.o /usr/lib/crti.o /usr/lib/gcc-lib/i686/3.3.1/crtbegin.o -L/usr/lib/gcc-lib/i686/3.3.1 hello.o -lgcc -lgcc_eh -lc -lgcc -lgcc_eh /usr/lib/gcc-lib/i686/3.3.1/crtend.o /usr/lib/crtn.o
+\end{lstlisting}
+
+  幸运的是我们从不需要直接键入如上的命令--当调用如下时, 整个链接过程已经被 \textbf{gcc} 透明地处理: 
+
+\begin{lstlisting}
+  $ gcc hello.o
+\end{lstlisting}
+
+  这将把 '\textbf{hello.o}' 目标文件连接到 C 标准库, 并产生一个可执行文件 '\textbf{a.out}':
+
+\begin{lstlisting}
+  $ ./a.out
+  Hello, world!
+\end{lstlisting}
+
+  一个C++程序的目标文件也可以使用一个 \textbf{g++} 命令以相同的方式被链接到 \textbf{C++} 标准库.
 
 \chapter{检查已编译的文件}
 \section{识别文件}
