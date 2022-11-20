@@ -1,4 +1,4 @@
-\documentclass[lang=cn,10pt,newtx,scheme=chinese]{elegantbook}
+\documentclass[lang=cn,12pt,newtx,scheme=chinese]{elegantbook}
 
 \title{An Introduction to GCC: GCC简明介绍}
 \subtitle{for the GNU Compilers \textbf{gcc} and \textbf{g++}}
@@ -22,6 +22,8 @@
 
 \addbibresource[location=local]{reference.bib} % 参考文献，不要删除
 
+\linespread{1.5} % 行距
+\setlength{\parskip}{1em} % 段落间距
 
 %==========================目录层次设置============================%
 \setcounter{part}{-1}
@@ -44,6 +46,20 @@
 
 \chapter*{前言}
 \addcontentsline{toc}{chapter}{前言}
+\textit{亲爱的理查德.斯托曼, GCC的主要开发者和GNU项目的创建者, 编写了这篇前言.}
+
+\indent 这本书将作为开始使用GCC(the GNU Compiler Collection)的指南. 它将教会你如何使用GCC作为编程工具. 当然, GCC是一个编程工具, 但是它还带有其他更多的. 它是这个二十年来为计算机用户谋求自由的一部分.
+
+\indent 我们都希望有好的软件, 但软件的"好"意味着什么？方便的功能和可靠性是它\textit{技术}意义上的好, 但是这是远远不够的. 好的软件必须要\textit{伦理上}也是好的: 它必须尊重用户的自由.
+
+\indent 作为软件的一个用户, 你应该有以你认为合适的方式运行它的权利, 学习它的源代码然后以你的想法修改它的权利, 重新分发其副本给他人的权利, 发布一个修改的版本以便于你可以帮助社区建设的权利. 当一个程序以这种方式尊重你的自由, 我们可以称其为自由软件. 在 GCC 之前, 有许多其他C编译器, Fortan, Ada, 等等. 但是他们不是自由软件; 你不能自由地使用它们. 我编写了GCC, 因此我们可以使用一个编译器而不用放弃我们的自由.
+
+\indent 为了使用一个计算机系统, 单独一个编译器是不够的, 你需要一整个操作系统. 在1983年, 所有为现代计算机设计的操作系统都是不自由的, 为了弥补这个问题, 在1984年, 我开始开发GNU操作系统, 这是一个 Unix-like 系统, 它将完全包含自由软件. 开发 GCC 就是开发 GNU 的一部分.
+
+\indent 在90年代早期, 接近完成的 GNU 操作系统终于完整了, 通过一个额外的内核, Linux(它在1992年成为了自由软件). 结合体 GNU/Linux 操作系统终于实现了以自由的方式使用计算机的目标. 但是自由从不被自动保障, 因此我们需要为保卫它而工作. 自由软件运动需要你的支持.
+
+\rightline{Richard M. Stallman}
+\rightline{February 2004}
 
 \chapter{介绍}
 \section{GCC的简要历史}
